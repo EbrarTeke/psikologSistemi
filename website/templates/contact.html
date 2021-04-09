@@ -1,0 +1,110 @@
+{%  extends 'base.html'%}
+{% load static %}
+{%block title%}Contact Us {% endblock %}
+{% block content %}
+
+
+
+
+     <!--  ************************* Page Title Starts Here ************************** -->
+               <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>About Ebrar's Clinic</h2>
+                           <ul>
+                               <li> <a href="http://127.0.0.1:8000"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Contact Us</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+       
+         <!-- ######## Page  Title End ####### -->
+    
+    
+     <br>   <br> <br> 
+     {% if message_name %}
+     <center>  
+        <h2>Thanks {{message_name}}</h2>
+        <p>We received your email and will respond shortly...</p>
+    </center> 
+     {%else%}
+      <div style="margin-top:0px;" class="row no-margin">
+        
+       
+        <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12038.41289132373!2d28.780236689814675!3d41.03393585642999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa4389aacd0d3%3A0xeae5db40df7558c2!2sSabahattin%20Zaim%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1608334683536!5m2!1str!2str"  height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+      </div>
+
+      <div class="row contact-rooo no-margin">
+        <div class="container">
+           <div class="row">
+               
+          
+            <div style="padding:20px" class="col-sm-6">
+            <h2 style="font-size:18px">Contact Form </h2>
+            <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Enter Name :</label></div>
+                    <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="message_name" class="form-control input-sm"  ></div>
+                </div>
+                <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Email Address :</label></div>
+                    <div class="col-sm-8"><input type="text" name="email_adress" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
+                </div>
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Mobile Number:</label></div>
+                    <div class="col-sm-8"><input type="text" name="phone_number" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
+                </div>
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label>Enter  Message:</label></div>
+                    <div class="col-sm-8">
+                      <textarea rows="5" placeholder="Enter Your Message" name="message" class="form-control input-sm"></textarea>
+                    </div>
+                </div>
+                 <div style="margin-top:10px;" class="row">
+                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                    <div class="col-sm-8">
+                     <button class="btn btn-success btn-sm">Send Message</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+    {% endif %}            
+             <div class="col-sm-6">
+                    
+                  <div style="margin:50px" class="serv"> 
+                
+               
+             
+                  
+              
+          <h2 style="margin-top:10px;">Address</h2>
+
+    Halkalı Mahallesi <br>
+    Halkalı,34567<br>
+    Küçükçekmece/İstanbul<br>
+    Phone:444 97 98<br>
+    Email:ebrarclinic@gmail.com<br>
+    
+
+ 
+       
+            
+                
+                
+              
+           </div>    
+                
+             
+         </div>
+
+            </div>
+        </div>
+        
+      </div>
+   	
+
+   {% endblock %} 
+      
